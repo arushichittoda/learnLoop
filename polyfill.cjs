@@ -1,0 +1,6 @@
+const crypto = require("node:crypto");
+if (!crypto.hash) {
+  crypto.hash = (algorithm, data, outputEncoding) =>
+    crypto.createHash(algorithm).update(data).digest(outputEncoding);
+}
+
